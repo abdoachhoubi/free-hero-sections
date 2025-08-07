@@ -1,8 +1,7 @@
 "use client";
 // Only using "use client" to pass event handlers `onPrimaryClick`, `onSecondaryClick` and `onNotificationClick` to the component
-
-import { WebsiteBuilder } from "@/components/hero-sections-clean/website-builder";
 import { WEBSITE_BUILDER_DATA } from "@/data/hero-data";
+import { WebsiteBuilder } from "@/sections/website-builder";
 
 export default function WebsiteBuilderPage() {
   return (

@@ -1,9 +1,10 @@
 export const SAAS_DATA = {
-  brandName: "syngri",
+  brandName: "astro",
   isAvailable: true,
   availabilityText: "Available for Work",
   headline: "Transform your ideas into digital success with us!",
-  description: "We're your partner in product design, website creation, and branding for every stage of your business.",
+  description:
+    "We're your partner in product design, website creation, and branding for every stage of your business.",
   primaryButtonText: "Services",
   secondaryButtonText: "Our work",
   navigationItems: [
@@ -12,13 +13,13 @@ export const SAAS_DATA = {
     { label: "Projects", href: "#projects" },
     { label: "Contact", href: "#contact" },
   ],
-}
+};
 
 export const E_LEARNING_DATA = {
-  brandName: "vivora",
+  brandName: "astro",
   headline: "Study Less. Learn More.",
   description:
-    "Vivora turns scattered content into clean, personalized study guides—so you spend less time organizing and more time understanding.",
+    "Astro turns scattered content into clean, personalized study guides—so you spend less time organizing and more time understanding.",
   primaryButtonText: "Start Free Trial",
   secondaryButtonText: "See how it works",
   rating: 5,
@@ -30,12 +31,12 @@ export const E_LEARNING_DATA = {
     "https://images.unsplash.com/photo-1665174286799-5c51dcc9748a?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "https://images.unsplash.com/photo-1742518424517-ca7890ff9510?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   ],
-}
+};
 
 export const WEBSITE_BUILDER_DATA = {
   notificationText: "1000+ customers joined today",
   notificationCta: "Join now",
-  headline: "Build Your Website Faster with Frameblox",
+  headline: "Build Your Website Faster with Astro",
   description:
     "Speed up your website build with our ultimate UI kits for Framer. Enjoy high-quality, customizable elements for a seamless, stunning user experience.",
   primaryButtonText: "Get it now",
@@ -46,4 +47,4 @@ export const WEBSITE_BUILDER_DATA = {
     { value: "150+", label: "Customers" },
     { value: "150+", label: "Reviews" },
   ],
-}
+};

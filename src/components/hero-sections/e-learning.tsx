@@ -90,46 +90,6 @@ const styles = {
   card3: `absolute left-1/4 bottom-14 shadow-xl rounded-3xl border-[1px] border-black -rotate-12`,
 };
 
-// Icon positions with animation delays
-const iconConfig = [
-  {
-    src: "/logo/vue-9.svg",
-    alt: "Vue",
-    position: "top-1/4 left-1/3",
-    delay: ".2s",
-  },
-  {
-    src: "/logo/nestjs.svg",
-    alt: "NestJS",
-    position: "top-1/2 left-1/2",
-    delay: "1s",
-  },
-  {
-    src: "/logo/tensorflow-2.svg",
-    alt: "TensorFlow",
-    position: "top-3/4 left-1/3",
-    delay: "0s",
-  },
-  {
-    src: "/logo/react-2.svg",
-    alt: "React",
-    position: "top-1/2 right-1/4",
-    delay: ".8s",
-  },
-  {
-    src: "/logo/git-icon.svg",
-    alt: "Git",
-    position: "top-3/4 right-1/3",
-    delay: ".4s",
-  },
-  {
-    src: "/logo/postgresql.svg",
-    alt: "PostgreSQL",
-    position: "top-12 left-1/2",
-    delay: ".6s",
-  },
-];
-
 const backgroundPattern = {
   backgroundImage: `
     repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(75, 85, 99, 0.08) 19px, rgba(75, 85, 99, 0.08) 20px, transparent 20px, transparent 39px, rgba(75, 85, 99, 0.08) 39px, rgba(75, 85, 99, 0.08) 40px),
@@ -139,6 +99,254 @@ const backgroundPattern = {
   `,
   backgroundSize: "40px 40px, 40px 40px, 40px 40px, 40px 40px",
 };
+
+// Background component
+function Background() {
+  return (
+    <div className="absolute inset-0">
+      <div className={styles.backgroundBlob1} />
+      <div className={styles.backgroundBlob2} />
+    </div>
+  );
+}
+
+// Hero content component
+interface HeroContentProps {
+  headline: string;
+  description: string;
+  primaryButtonText: string;
+  secondaryButtonText: string;
+  onPrimaryClick: () => void;
+  onSecondaryClick: () => void;
+}
+
+function HeroContent({
+  headline,
+  description,
+  primaryButtonText,
+  secondaryButtonText,
+  onPrimaryClick,
+  onSecondaryClick,
+}: HeroContentProps) {
+  return (
+    <div className={styles.topSection}>
+      <h1 className={`${playfairDisplay.className} ${styles.headline}`}>
+        {headline}
+      </h1>
+
+      <p className={`${ibmPlexMono.className} ${styles.description}`}>
+        {description}
+      </p>
+
+      <CTAButtons
+        primaryButtonText={primaryButtonText}
+        secondaryButtonText={secondaryButtonText}
+        onPrimaryClick={onPrimaryClick}
+        onSecondaryClick={onSecondaryClick}
+      />
+    </div>
+  );
+}
+
+// CTA Buttons component
+interface CTAButtonsProps {
+  primaryButtonText: string;
+  secondaryButtonText: string;
+  onPrimaryClick: () => void;
+  onSecondaryClick: () => void;
+}
+
+function CTAButtons({
+  primaryButtonText,
+  secondaryButtonText,
+  onPrimaryClick,
+  onSecondaryClick,
+}: CTAButtonsProps) {
+  return (
+    <div className={styles.buttonContainer}>
+      <button
+        onClick={onSecondaryClick}
+        className={`${ibmPlexMono.className} ${styles.secondaryButton}`}
+      >
+        {secondaryButtonText}
+        <ArrowRightCircle className="w-5 h-5" aria-hidden="true" />
+      </button>
+
+      <button
+        onClick={onPrimaryClick}
+        className={`${ibmPlexMono.className} ${styles.primaryButton}`}
+      >
+        {primaryButtonText}
+      </button>
+    </div>
+  );
+}
+
+// User testimonials component
+interface UserTestimonialsProps {
+  rating: number;
+  reviewCount: number;
+  userAvatars: string[];
+}
+
+function UserTestimonials({
+  rating,
+  reviewCount,
+  userAvatars,
+}: UserTestimonialsProps) {
+  return (
+    <div className={styles.testimonialsContainer}>
+      <div className={styles.avatarContainer}>
+        {userAvatars.map((avatar, index) => (
+          <Image
+            key={index}
+            src={avatar}
+            alt={`User ${index + 1}`}
+            className={styles.avatar}
+            width={32}
+            height={32}
+          />
+        ))}
+      </div>
+
+      <div className="flex flex-col">
+        <div className="flex items-center space-x-1">
+          {Array.from({ length: rating }, (_, i) => (
+            <Star key={i} className={styles.starIcon} />
+          ))}
+        </div>
+        <span className={`${ibmPlexMono.className} ${styles.reviewText}`}>
+          loved by {reviewCount}+ students
+        </span>
+      </div>
+    </div>
+  );
+}
+
+// Floating icons component
+function FloatingIcons() {
+  const iconConfig = [
+    {
+      src: "/logo/vue-9.svg",
+      alt: "Vue",
+      position: "top-1/4 left-1/3",
+      delay: ".2s",
+    },
+    {
+      src: "/logo/nestjs.svg",
+      alt: "NestJS",
+      position: "top-1/2 left-1/2",
+      delay: "1s",
+    },
+    {
+      src: "/logo/tensorflow-2.svg",
+      alt: "TensorFlow",
+      position: "top-3/4 left-1/3",
+      delay: "0s",
+    },
+    {
+      src: "/logo/react-2.svg",
+      alt: "React",
+      position: "top-1/2 right-1/4",
+      delay: ".8s",
+    },
+    {
+      src: "/logo/git-icon.svg",
+      alt: "Git",
+      position: "top-3/4 right-1/3",
+      delay: ".4s",
+    },
+    {
+      src: "/logo/postgresql.svg",
+      alt: "PostgreSQL",
+      position: "top-12 left-1/2",
+      delay: ".6s",
+    },
+  ];
+
+  return (
+    <div className={styles.iconsContainer}>
+      {iconConfig.map((icon, index) => (
+        <Image
+          key={index}
+          className={`${styles.floatingIcon} ${icon.position}`}
+          style={{
+            animation: "float 3s ease-in-out infinite",
+            animationDelay: icon.delay,
+          }}
+          src={icon.src}
+          alt={icon.alt}
+          width={50}
+          height={50}
+        />
+      ))}
+    </div>
+  );
+}
+
+// Glowing separator component
+function GlowingSeparator() {
+  return (
+    <div className={styles.separatorContainer}>
+      <div className={styles.separatorGlow1} />
+      <div className={styles.separatorGlow2} />
+      <div className={styles.separatorLine} />
+    </div>
+  );
+}
+
+// Educational cards component
+function EducationalCards() {
+  const cards = [
+    {
+      src: "/images/card1.png",
+      alt: "Card 1",
+      width: 200,
+      height: 200,
+      className: styles.card1,
+    },
+    {
+      src: "/images/card2.png",
+      alt: "Card 2",
+      width: 170,
+      height: 170,
+      className: styles.card2,
+    },
+    {
+      src: "/images/card3.png",
+      alt: "Card 3",
+      width: 170,
+      height: 170,
+      className: styles.card3,
+    },
+  ];
+
+  return (
+    <div className={styles.cardsContainer}>
+      {cards.map((card, index) => (
+        <Image
+          key={index}
+          src={card.src}
+          alt={card.alt}
+          width={card.width}
+          height={card.height}
+          className={card.className}
+        />
+      ))}
+    </div>
+  );
+}
+
+// Bottom section component
+function BottomSection() {
+  return (
+    <div className={styles.bottomSection}>
+      <FloatingIcons />
+      <GlowingSeparator />
+      <EducationalCards />
+    </div>
+  );
+}
 
 /**
  * ELearning - Clean educational platform hero section
@@ -177,123 +385,25 @@ export default function ELearning({
       `}</style>
 
       <section style={backgroundPattern} className={styles.section}>
-        {/* Background decorative elements */}
-        <div className="absolute inset-0">
-          <div className={styles.backgroundBlob1} />
-          <div className={styles.backgroundBlob2} />
-        </div>
+        <Background />
 
-        {/* Main content */}
         <div className={styles.mainContainer}>
-          {/* Top section */}
-          <div className={styles.topSection}>
-            <h1 className={`${playfairDisplay.className} ${styles.headline}`}>
-              {headline}
-            </h1>
+          <HeroContent
+            headline={headline}
+            description={description}
+            primaryButtonText={primaryButtonText}
+            secondaryButtonText={secondaryButtonText}
+            onPrimaryClick={onPrimaryClick}
+            onSecondaryClick={onSecondaryClick}
+          />
 
-            <p className={`${ibmPlexMono.className} ${styles.description}`}>
-              {description}
-            </p>
+          <UserTestimonials
+            rating={rating}
+            reviewCount={reviewCount}
+            userAvatars={userAvatars}
+          />
 
-            <div className={styles.buttonContainer}>
-              <button
-                onClick={onSecondaryClick}
-                className={`${ibmPlexMono.className} ${styles.secondaryButton}`}
-              >
-                {secondaryButtonText}
-                <ArrowRightCircle className="w-5 h-5" aria-hidden="true" />
-              </button>
-
-              <button
-                onClick={onPrimaryClick}
-                className={`${ibmPlexMono.className} ${styles.primaryButton}`}
-              >
-                {primaryButtonText}
-              </button>
-            </div>
-
-            {/* User testimonials */}
-            <div className={styles.testimonialsContainer}>
-              <div className={styles.avatarContainer}>
-                {userAvatars.map((avatar, index) => (
-                  <Image
-                    key={index}
-                    src={avatar}
-                    alt={`User ${index + 1}`}
-                    className={styles.avatar}
-                    width={32}
-                    height={32}
-                  />
-                ))}
-              </div>
-
-              <div className="flex flex-col">
-                <div className="flex items-center space-x-1">
-                  {Array.from({ length: rating }, (_, i) => (
-                    <Star key={i} className={styles.starIcon} />
-                  ))}
-                </div>
-                <span
-                  className={`${ibmPlexMono.className} ${styles.reviewText}`}
-                >
-                  loved by {reviewCount}+ students
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom section */}
-          <div className={styles.bottomSection}>
-            {/* Floating icons */}
-            <div className={styles.iconsContainer}>
-              {iconConfig.map((icon, index) => (
-                <Image
-                  key={index}
-                  className={`${styles.floatingIcon} ${icon.position}`}
-                  style={{
-                    animation: "float 3s ease-in-out infinite",
-                    animationDelay: icon.delay,
-                  }}
-                  src={icon.src}
-                  alt={icon.alt}
-                  width={50}
-                  height={50}
-                />
-              ))}
-            </div>
-
-            {/* Glowing separator */}
-            <div className={styles.separatorContainer}>
-              <div className={styles.separatorGlow1} />
-              <div className={styles.separatorGlow2} />
-              <div className={styles.separatorLine} />
-            </div>
-
-            {/* Cards */}
-            <div className={styles.cardsContainer}>
-              <Image
-                src="/images/card1.png"
-                alt="Card 1"
-                width={200}
-                height={200}
-                className={styles.card1}
-              />
-              <Image
-                src="/images/card2.png"
-                alt="Card 2"
-                width={170}
-                height={170}
-                className={styles.card2}
-              />
-              <Image
-                src="/images/card3.png"
-                alt="Card 3"
-                width={170}
-                height={170}
-                className={styles.card3}
-              />
-            </div>
-          </div>
+          <BottomSection />
         </div>
       </section>
     </>
