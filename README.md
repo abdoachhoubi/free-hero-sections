@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Free Hero Sections
 
-## Getting Started
+A curated collection of **polished, production-ready hero sections** you can drop straight into your projects.  
+Every hero is built with **Next.js** + **Tailwind CSS**, featuring clean, composable components and **sensible defaults**.
 
-First, run the development server:
+Available hero types:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- 🏗 **Website Builder**
+- 📚 **E-Learning**
+- 💻 **SaaS**
+
+**🔗 Preview them on the [homepage](https://free-hero-sections.vercel.app/)**  
+Click the **GitHub** button on any card to jump directly to its source code.
+
+---
+
+## ⚡ Quick Start (Run Locally)
+
+**Requirements:** Node.js 18+
+
+1. **Install dependencies**
+   ```bash
+   npm i
+   ```
+
+
+2. **Start the dev server**
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000)
+
+**Available Routes:**
+
+* `/website-builder`
+* `/e-learning`
+* `/saas`
+
+---
+
+## 📥 How to Use a Hero Section
+
+### **Option A — Copy from the Repo**
+
+1. Browse the folder for the hero you want:
+
+   * [Website Builder](https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/website-builder)
+   * [E-Learning](https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/e-learning)
+   * [SaaS](https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/saas)
+2. Copy the hero folder into your project.
+3. Update **import paths** and **assets** as needed.
+
+---
+
+### **Option B — Import Directly in a Next.js App**
+
+Each hero exposes a **main component** with **typed props**.
+
+**Example (SaaS Hero)**
+`app/saas/page.tsx`:
+
+```tsx
+import Saas from '@/sections/saas'
+import { SAAS_DATA } from '@/data/hero-data'
+
+export default function Page() {
+  return (
+    <main>
+      <Saas
+        {...SAAS_DATA}
+        onPrimaryClick={() => {}}
+        onSecondaryClick={() => {}}
+      />
+    </main>
+  )
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Other heroes follow the same pattern:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* `app/e-learning/page.tsx` → `ELearning` from `@/sections/e-learning`
+* `app/website-builder/page.tsx` → `WebsiteBuilder` from `@/sections/website-builder`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/                     # App Router pages & layout
+  sections/
+    saas/                  # SaaS hero
+    e-learning/            # E-Learning hero
+    website-builder/       # Website Builder hero
+  data/
+    hero-data.ts           # Example prop data
+    sections.ts            # Metadata for homepage cards
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Tech Stack
 
-## Deploy on Vercel
+* **Next.js 15** + **React 19**
+* **Tailwind CSS v4**
+* **lucide-react** icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🤝 Contributing
+
+We welcome issues and PRs!
+If you’re adding a new hero:
+
+1. Create a new folder under `src/sections/<your-hero>`
+2. Export a **main component** (and subcomponents if needed)
+3. Add a preview page under `src/app`
+4. Update `src/data/sections.ts` with:
+
+   * Cover image
+   * Route path
+   * GitHub source URL
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) — free to use in personal & commercial projects.
