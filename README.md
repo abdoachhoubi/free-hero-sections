@@ -1,87 +1,130 @@
-# Free Hero Sections
+# 🚀 Free Hero Sections
 
-A collection of polished, production‑ready hero sections you can copy into your projects. Each hero is built with Next.js and Tailwind CSS, with clean, composable components and sensible defaults.
+A curated collection of **polished, production-ready hero sections** you can drop straight into your projects.  
+Every hero is built with **Next.js** + **Tailwind CSS**, featuring clean, composable components and **sensible defaults**.
 
-- Website Builder
-- E‑Learning
-- SaaS
+Available hero types:
 
-Preview them on the homepage and open the source for each hero with the GitHub button on its card.
+- 🏗 **Website Builder**
+- 📚 **E-Learning**
+- 💻 **SaaS**
 
-## Quick Start (Run Locally)
+**🔗 Preview them on the [homepage](https://free-hero-sections.vercel.app/)**  
+Click the **GitHub** button on any card to jump directly to its source code.
 
-Requirements: Node 18+.
+---
 
-1) Install dependencies
-- npm i
+## ⚡ Quick Start (Run Locally)
 
-2) Start the dev server
-- npm run dev
+**Requirements:** Node.js 18+
 
-Open http://localhost:3000
+1. **Install dependencies**
+   ```bash
+   npm i
+   ```
 
-Routes:
-- /website-builder
-- /e-learning
-- /saas
 
-## How to Get a Hero Section
+2. **Start the dev server**
 
-Option A — Copy from the repo
-- Browse the folder for the hero you want:
-  - Website Builder → https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/website-builder
-  - E‑Learning → https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/e-learning
-  - SaaS → https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/saas
-- Copy the hero folder into your app and adjust import paths and assets as needed.
+   ```bash
+   npm run dev
+   ```
 
-Option B — Import the component in a Next.js app
-- Each hero exposes a main component and simple prop types.
+3. Open [http://localhost:3000](http://localhost:3000)
 
-Example (SaaS)
-- File: app/saas/page.tsx
-- Content:
-  import Saas from '@/sections/saas'
-  import { SAAS_DATA } from '@/data/hero-data'
+**Available Routes:**
 
-  export default function Page() {
-    return (
-      <main>
-        <Saas
-          {...SAAS_DATA}
-          onPrimaryClick={() => {}}
-          onSecondaryClick={() => {}}
-        />
-      </main>
-    )
-  }
+* `/website-builder`
+* `/e-learning`
+* `/saas`
 
-You can follow the same pattern for E‑Learning and Website Builder:
-- app/e-learning/page.tsx uses ELearning from '@/sections/e-learning'
-- app/website-builder/page.tsx uses WebsiteBuilder from '@/sections/website-builder'
+---
 
-## Project Structure
+## 📥 How to Use a Hero Section
 
-- src/app: App Router pages and layout
-- src/sections/saas: SaaS hero
-- src/sections/e-learning: E‑Learning hero
-- src/sections/website-builder: Website Builder hero
-- src/data/hero-data.ts: Example prop data
-- src/data/sections.ts: Section metadata for homepage cards
+### **Option A — Copy from the Repo**
 
-## Tech Stack
+1. Browse the folder for the hero you want:
 
-- Next.js 15, React 19
-- Tailwind CSS v4
-- lucide-react icons
+   * [Website Builder](https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/website-builder)
+   * [E-Learning](https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/e-learning)
+   * [SaaS](https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/saas)
+2. Copy the hero folder into your project.
+3. Update **import paths** and **assets** as needed.
 
-## Contributing
+---
 
-Issues and PRs are welcome. If you add a new hero:
-- Place it under src/sections/<your-hero>
-- Export a main component plus any subcomponents as needed
-- Add a page route under src/app if you want a live preview
-- Update src/data/sections.ts to include cover, route, and GitHub URL
+### **Option B — Import Directly in a Next.js App**
 
-## License
+Each hero exposes a **main component** with **typed props**.
 
-MIT
+**Example (SaaS Hero)**
+`app/saas/page.tsx`:
+
+```tsx
+import Saas from '@/sections/saas'
+import { SAAS_DATA } from '@/data/hero-data'
+
+export default function Page() {
+  return (
+    <main>
+      <Saas
+        {...SAAS_DATA}
+        onPrimaryClick={() => {}}
+        onSecondaryClick={() => {}}
+      />
+    </main>
+  )
+}
+```
+
+**Other heroes follow the same pattern:**
+
+* `app/e-learning/page.tsx` → `ELearning` from `@/sections/e-learning`
+* `app/website-builder/page.tsx` → `WebsiteBuilder` from `@/sections/website-builder`
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+  app/                     # App Router pages & layout
+  sections/
+    saas/                  # SaaS hero
+    e-learning/            # E-Learning hero
+    website-builder/       # Website Builder hero
+  data/
+    hero-data.ts           # Example prop data
+    sections.ts            # Metadata for homepage cards
+```
+
+---
+
+## 🛠 Tech Stack
+
+* **Next.js 15** + **React 19**
+* **Tailwind CSS v4**
+* **lucide-react** icons
+
+---
+
+## 🤝 Contributing
+
+We welcome issues and PRs!
+If you’re adding a new hero:
+
+1. Create a new folder under `src/sections/<your-hero>`
+2. Export a **main component** (and subcomponents if needed)
+3. Add a preview page under `src/app`
+4. Update `src/data/sections.ts` with:
+
+   * Cover image
+   * Route path
+   * GitHub source URL
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) — free to use in personal & commercial projects.
