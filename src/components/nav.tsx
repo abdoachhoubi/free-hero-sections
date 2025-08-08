@@ -30,7 +30,9 @@ const MobileNavigation = () => {
     <div className="fixed top-0 left-0 z-49 w-screen p-2">
       {/* tab */}
       <div className="w-full flex items-center justify-between p-2 rounded-full bg-[rgba(0,0,0,0.2)]">
-        <Image src="/logo.png" alt="Logo" width={40} height={40} className="rounded-full" />
+        <Link href="https://blog.abdoachhoubi.me" target="_blank" rel="noopener noreferrer">
+          <Image src="/logo.png" alt="Logo" width={40} height={40} className="rounded-full" />
+        </Link>
         <div className="flex items-center justify-center px-4 gap-4">
           <ThemeToggleButton variant="circle-blur" start="top-right" />
           <Menu className="mr-2" onClick={() => setIsOpen(true)} size={24} />
@@ -81,8 +83,14 @@ const Navigation = () => {
         <ul
           className={`${ibmPlexMono.className} flex gap-6 list-none p-3 lg:p-2 xl:p-3 bg-[rgba(0,0,0,0.2)] rounded-full items-center`}
         >
-          <Link href="https://abdoachhoubi.me" target="_blank" rel="noopener noreferrer">
-            <Image src="/logo.png" alt="Logo" width={40} height={40} className="rounded-full w-10 h-10" />
+          <Link href="https://blog.abdoachhoubi.me" target="_blank" rel="noopener noreferrer">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="rounded-full w-10 h-10"
+            />
           </Link>
           <li className="cursor-pointer lg:text-xs xl:text-sm 2xl:text-base hover:bg-[rgba(0,0,0,0.4)] px-4 py-2 rounded-full transition:all duration-200 ease-in-out">
             <Link href="/">Home</Link>
