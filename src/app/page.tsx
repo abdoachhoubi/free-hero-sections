@@ -1,10 +1,12 @@
 'use client'
 
-import { ArrowUpRight, Sparkles } from 'lucide-react'
+import type React from 'react'
+import { ArrowUpRight, Sparkles, Github } from 'lucide-react'
 import { IBM_Plex_Mono, Playfair_Display } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { SECTIONS } from '@/data/sections'
 
 const playfairDisplay = Playfair_Display({ subsets: ['latin'] })
 const ibmPlexMono = IBM_Plex_Mono({
@@ -12,13 +14,36 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
 })
 
-const Card = ({ image, button, page }: { image: string; button: string; page: string }) => {
+const Card = ({
+  image,
+  button,
+  page,
+  githubUrl,
+  label,
+}: {
+  image: string
+  button: string
+  page: string
+  githubUrl: string
+  label: string
+}) => {
   const router = useRouter()
   return (
     <div
-      className="flex flex-col items-center justify-center  overflow-hidden group cursor-pointer"
+      className="relative flex flex-col items-center justify-center  overflow-hidden group cursor-pointer"
       onClick={() => router.push(page)}
     >
+      <a
+        href={githubUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`View code on GitHub: ${label}`}
+        title={`View ${label} on GitHub`}
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
+        className="absolute right-3 top-3 z-10 inline-flex items-center justify-center rounded-full border border-indigo-200 bg-white/80 backdrop-blur px-2.5 py-2 text-indigo-700 shadow-sm transition-all duration-200 hover:bg-white hover:shadow-md dark:bg-slate-900/70 dark:text-indigo-200 dark:border-slate-700"
+      >
+        <Github className="w-4 h-4" />
+      </a>
       <Image
         className="rounded-xl lg:rounded-3xl transition-all duration-500 ease-in-out border-[1px] border-indigo-50 overflow-hidden"
         src={image}
@@ -66,9 +91,16 @@ export default function Home() {
         These aren&apos;t just blocks of code — they&apos;re your canvas. Paste, tweak, publish.
       </p>
       <div className="flex flex-col lg:flex-row w-full items-center justify-evenly gap-4 lg:gap-8 pt-4">
-        <Card image="/covers/hero-sections/cover1.png" page="/website-builder" button="Preview" />
-        <Card image="/covers/hero-sections/cover2.png" page="/e-learning" button="Preview" />
-        <Card image="/covers/hero-sections/cover3.png" page="/saas" button="Preview" />
+        {SECTIONS.map((s) => (
+          <Card
+            key={s.key}
+            image={s.image}
+            page={s.page}
+            button="Preview"
+            githubUrl={s.githubUrl}
+            label={s.label}
+          />
+        ))}
       </div>
     </main>
   )

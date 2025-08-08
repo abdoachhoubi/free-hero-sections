@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Free Hero Sections
 
-## Getting Started
+A collection of polished, production‑ready hero sections you can copy into your projects. Each hero is built with Next.js and Tailwind CSS, with clean, composable components and sensible defaults.
 
-First, run the development server:
+- Website Builder
+- E‑Learning
+- SaaS
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Preview them on the homepage and open the source for each hero with the GitHub button on its card.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Quick Start (Run Locally)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Requirements: Node 18+.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1) Install dependencies
+- npm i
 
-## Learn More
+2) Start the dev server
+- npm run dev
 
-To learn more about Next.js, take a look at the following resources:
+Open http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Routes:
+- /website-builder
+- /e-learning
+- /saas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How to Get a Hero Section
 
-## Deploy on Vercel
+Option A — Copy from the repo
+- Browse the folder for the hero you want:
+  - Website Builder → https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/website-builder
+  - E‑Learning → https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/e-learning
+  - SaaS → https://github.com/abdoachhoubi/free-hero-sections/tree/main/src/sections/saas
+- Copy the hero folder into your app and adjust import paths and assets as needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Option B — Import the component in a Next.js app
+- Each hero exposes a main component and simple prop types.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example (SaaS)
+- File: app/saas/page.tsx
+- Content:
+  import Saas from '@/sections/saas'
+  import { SAAS_DATA } from '@/data/hero-data'
+
+  export default function Page() {
+    return (
+      <main>
+        <Saas
+          {...SAAS_DATA}
+          onPrimaryClick={() => {}}
+          onSecondaryClick={() => {}}
+        />
+      </main>
+    )
+  }
+
+You can follow the same pattern for E‑Learning and Website Builder:
+- app/e-learning/page.tsx uses ELearning from '@/sections/e-learning'
+- app/website-builder/page.tsx uses WebsiteBuilder from '@/sections/website-builder'
+
+## Project Structure
+
+- src/app: App Router pages and layout
+- src/sections/saas: SaaS hero
+- src/sections/e-learning: E‑Learning hero
+- src/sections/website-builder: Website Builder hero
+- src/data/hero-data.ts: Example prop data
+- src/data/sections.ts: Section metadata for homepage cards
+
+## Tech Stack
+
+- Next.js 15, React 19
+- Tailwind CSS v4
+- lucide-react icons
+
+## Contributing
+
+Issues and PRs are welcome. If you add a new hero:
+- Place it under src/sections/<your-hero>
+- Export a main component plus any subcomponents as needed
+- Add a page route under src/app if you want a live preview
+- Update src/data/sections.ts to include cover, route, and GitHub URL
+
+## License
+
+MIT
