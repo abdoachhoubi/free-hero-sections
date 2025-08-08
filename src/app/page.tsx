@@ -63,7 +63,7 @@ export default function Home() {
       >
         Crafted for makers who care about detail but hate starting from scratch.
         <br />
-        These aren't just blocks of code — they're your canvas. Paste, tweak, publish.
+        These aren&apos;t just blocks of code — they&apos;re your canvas. Paste, tweak, publish.
       </p>
       <div className="flex flex-col lg:flex-row w-full items-center justify-evenly gap-4 lg:gap-8 pt-4">
         <Card image="/covers/hero-sections/cover1.png" page="/website-builder" button="Preview" />
