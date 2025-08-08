@@ -1,4 +1,4 @@
-import { styles } from "../styles";
+import { styles } from '../styles'
 
 export function GlowingSeparator() {
   return (
@@ -7,5 +7,5 @@ export function GlowingSeparator() {
       <div className={styles.separatorGlow2} />
       <div className={styles.separatorLine} />
     </div>
-  );
+  )
 }

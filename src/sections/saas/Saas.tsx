@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
-import { Background } from "./components/Background";
-import { FloatAnimation } from "./components/FloatAnimation";
-import { HeroContent } from "./components/HeroContent";
-import { styles } from "./styles";
-import { SaasProps } from "./types";
+import { Background } from './components/Background'
+import { FloatAnimation } from './components/FloatAnimation'
+import { HeroContent } from './components/HeroContent'
+import { styles } from './styles'
+import { SaasProps } from './types'
 
 /**
  * Saas - Modern dark hero section with 3D abstract element
@@ -41,7 +41,7 @@ export const Saas = ({
       <div className={styles.bottomGradient} />
       <FloatAnimation />
     </section>
-  );
-};
+  )
+}
 
-export default Saas;
+export default Saas

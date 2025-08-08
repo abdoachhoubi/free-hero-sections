@@ -1,10 +1,10 @@
-"use client";
+'use client'
 
-import { Background } from "./components/Background";
-import { HeroContent } from "./components/HeroContent";
-import { HeroImage } from "./components/HeroImage";
-import { styles } from "./styles";
-import type { WebsiteBuilderProps } from "./types";
+import { Background } from './components/Background'
+import { HeroContent } from './components/HeroContent'
+import { HeroImage } from './components/HeroImage'
+import { styles } from './styles'
+import type { WebsiteBuilderProps } from './types'
 
 /**
  * WebsiteBuilder - Modern tech hero section with 3D robot
@@ -46,5 +46,5 @@ export function WebsiteBuilder({
 
       <HeroImage />
     </section>
-  );
+  )
 }

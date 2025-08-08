@@ -1,13 +1,13 @@
 // Main component
-export { WebsiteBuilder } from "./WebsiteBuilder";
+export { WebsiteBuilder } from './WebsiteBuilder'
 
 // Sub-components (for potential individual use)
-export { Background } from "./components/Background";
-export { CTAButtons } from "./components/CTAButtons";
-export { HeroContent } from "./components/HeroContent";
-export { HeroImage } from "./components/HeroImage";
-export { NotificationBanner } from "./components/NotificationBanner";
-export { Statistics } from "./components/Statistics";
+export { Background } from './components/Background'
+export { CTAButtons } from './components/CTAButtons'
+export { HeroContent } from './components/HeroContent'
+export { HeroImage } from './components/HeroImage'
+export { NotificationBanner } from './components/NotificationBanner'
+export { Statistics } from './components/Statistics'
 
 // Types
 export type {
@@ -16,7 +16,7 @@ export type {
   Stat,
   StatisticsProps,
   WebsiteBuilderProps,
-} from "./types";
+} from './types'
 
 // Styles (if needed externally)
-export { styles } from "./styles";
+export { styles } from './styles'

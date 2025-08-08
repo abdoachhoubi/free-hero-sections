@@ -1,12 +1,8 @@
-import { ArrowRight, Users } from "lucide-react";
-import { styles } from "../styles";
-import type { NotificationBannerProps } from "../types";
+import { ArrowRight, Users } from 'lucide-react'
+import { styles } from '../styles'
+import type { NotificationBannerProps } from '../types'
 
-export function NotificationBanner({
-  text,
-  cta,
-  onClick,
-}: NotificationBannerProps) {
+export function NotificationBanner({ text, cta, onClick }: NotificationBannerProps) {
   return (
     <button
       onClick={onClick}
@@ -22,5 +18,5 @@ export function NotificationBanner({
         <ArrowRight className={styles.notification.arrow} aria-hidden="true" />
       </span>
     </button>
-  );
+  )
 }

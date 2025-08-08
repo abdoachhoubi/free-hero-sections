@@ -1,7 +1,7 @@
-import { styles } from "../styles";
-import { EducationalCards } from "./EducationalCards";
-import { FloatingIcons } from "./FloatingIcons";
-import { GlowingSeparator } from "./GlowingSeparator";
+import { styles } from '../styles'
+import { EducationalCards } from './EducationalCards'
+import { FloatingIcons } from './FloatingIcons'
+import { GlowingSeparator } from './GlowingSeparator'
 
 export function BottomSection() {
   return (
@@ -10,5 +10,5 @@ export function BottomSection() {
       <GlowingSeparator />
       <EducationalCards />
     </div>
-  );
+  )
 }

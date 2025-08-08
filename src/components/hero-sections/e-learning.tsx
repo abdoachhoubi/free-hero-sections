@@ -1,25 +1,25 @@
-"use client";
+'use client'
 
-import { ArrowRightCircle, Star } from "lucide-react";
-import { IBM_Plex_Mono, Playfair_Display } from "next/font/google";
-import Image from "next/image";
+import { ArrowRightCircle, Star } from 'lucide-react'
+import { IBM_Plex_Mono, Playfair_Display } from 'next/font/google'
+import Image from 'next/image'
 
-const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
+const playfairDisplay = Playfair_Display({ subsets: ['latin'] })
 const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+})
 
 interface ELearningProps {
-  headline: string;
-  description: string;
-  primaryButtonText: string;
-  secondaryButtonText: string;
-  onPrimaryClick: () => void;
-  onSecondaryClick: () => void;
-  rating: number;
-  reviewCount: number;
-  userAvatars: string[];
+  headline: string
+  description: string
+  primaryButtonText: string
+  secondaryButtonText: string
+  onPrimaryClick: () => void
+  onSecondaryClick: () => void
+  rating: number
+  reviewCount: number
+  userAvatars: string[]
 }
 
 // Extracted styles object for better maintainability
@@ -88,7 +88,7 @@ const styles = {
   card2: `absolute right-10 shadow-xl rounded-3xl border-[1px] border-black rotate-12`,
 
   card3: `absolute left-1/4 bottom-14 shadow-xl rounded-3xl border-[1px] border-black -rotate-12`,
-};
+}
 
 const backgroundPattern = {
   backgroundImage: `
@@ -97,8 +97,8 @@ const backgroundPattern = {
     radial-gradient(circle at 20px 20px, rgba(55, 65, 81, 0.12) 2px, transparent 2px),
     radial-gradient(circle at 40px 40px, rgba(55, 65, 81, 0.12) 2px, transparent 2px)
   `,
-  backgroundSize: "40px 40px, 40px 40px, 40px 40px, 40px 40px",
-};
+  backgroundSize: '40px 40px, 40px 40px, 40px 40px, 40px 40px',
+}
 
 // Background component
 function Background() {
@@ -107,17 +107,17 @@ function Background() {
       <div className={styles.backgroundBlob1} />
       <div className={styles.backgroundBlob2} />
     </div>
-  );
+  )
 }
 
 // Hero content component
 interface HeroContentProps {
-  headline: string;
-  description: string;
-  primaryButtonText: string;
-  secondaryButtonText: string;
-  onPrimaryClick: () => void;
-  onSecondaryClick: () => void;
+  headline: string
+  description: string
+  primaryButtonText: string
+  secondaryButtonText: string
+  onPrimaryClick: () => void
+  onSecondaryClick: () => void
 }
 
 function HeroContent({
@@ -130,13 +130,9 @@ function HeroContent({
 }: HeroContentProps) {
   return (
     <div className={styles.topSection}>
-      <h1 className={`${playfairDisplay.className} ${styles.headline}`}>
-        {headline}
-      </h1>
+      <h1 className={`${playfairDisplay.className} ${styles.headline}`}>{headline}</h1>
 
-      <p className={`${ibmPlexMono.className} ${styles.description}`}>
-        {description}
-      </p>
+      <p className={`${ibmPlexMono.className} ${styles.description}`}>{description}</p>
 
       <CTAButtons
         primaryButtonText={primaryButtonText}
@@ -145,15 +141,15 @@ function HeroContent({
         onSecondaryClick={onSecondaryClick}
       />
     </div>
-  );
+  )
 }
 
 // CTA Buttons component
 interface CTAButtonsProps {
-  primaryButtonText: string;
-  secondaryButtonText: string;
-  onPrimaryClick: () => void;
-  onSecondaryClick: () => void;
+  primaryButtonText: string
+  secondaryButtonText: string
+  onPrimaryClick: () => void
+  onSecondaryClick: () => void
 }
 
 function CTAButtons({
@@ -179,21 +175,17 @@ function CTAButtons({
         {primaryButtonText}
       </button>
     </div>
-  );
+  )
 }
 
 // User testimonials component
 interface UserTestimonialsProps {
-  rating: number;
-  reviewCount: number;
-  userAvatars: string[];
+  rating: number
+  reviewCount: number
+  userAvatars: string[]
 }
 
-function UserTestimonials({
-  rating,
-  reviewCount,
-  userAvatars,
-}: UserTestimonialsProps) {
+function UserTestimonials({ rating, reviewCount, userAvatars }: UserTestimonialsProps) {
   return (
     <div className={styles.testimonialsContainer}>
       <div className={styles.avatarContainer}>
@@ -220,49 +212,49 @@ function UserTestimonials({
         </span>
       </div>
     </div>
-  );
+  )
 }
 
 // Floating icons component
 function FloatingIcons() {
   const iconConfig = [
     {
-      src: "/logo/vue-9.svg",
-      alt: "Vue",
-      position: "top-1/4 left-1/3",
-      delay: ".2s",
+      src: '/logo/vue-9.svg',
+      alt: 'Vue',
+      position: 'top-1/4 left-1/3',
+      delay: '.2s',
     },
     {
-      src: "/logo/nestjs.svg",
-      alt: "NestJS",
-      position: "top-1/2 left-1/2",
-      delay: "1s",
+      src: '/logo/nestjs.svg',
+      alt: 'NestJS',
+      position: 'top-1/2 left-1/2',
+      delay: '1s',
     },
     {
-      src: "/logo/tensorflow-2.svg",
-      alt: "TensorFlow",
-      position: "top-3/4 left-1/3",
-      delay: "0s",
+      src: '/logo/tensorflow-2.svg',
+      alt: 'TensorFlow',
+      position: 'top-3/4 left-1/3',
+      delay: '0s',
     },
     {
-      src: "/logo/react-2.svg",
-      alt: "React",
-      position: "top-1/2 right-1/4",
-      delay: ".8s",
+      src: '/logo/react-2.svg',
+      alt: 'React',
+      position: 'top-1/2 right-1/4',
+      delay: '.8s',
     },
     {
-      src: "/logo/git-icon.svg",
-      alt: "Git",
-      position: "top-3/4 right-1/3",
-      delay: ".4s",
+      src: '/logo/git-icon.svg',
+      alt: 'Git',
+      position: 'top-3/4 right-1/3',
+      delay: '.4s',
     },
     {
-      src: "/logo/postgresql.svg",
-      alt: "PostgreSQL",
-      position: "top-12 left-1/2",
-      delay: ".6s",
+      src: '/logo/postgresql.svg',
+      alt: 'PostgreSQL',
+      position: 'top-12 left-1/2',
+      delay: '.6s',
     },
-  ];
+  ]
 
   return (
     <div className={styles.iconsContainer}>
@@ -271,7 +263,7 @@ function FloatingIcons() {
           key={index}
           className={`${styles.floatingIcon} ${icon.position}`}
           style={{
-            animation: "float 3s ease-in-out infinite",
+            animation: 'float 3s ease-in-out infinite',
             animationDelay: icon.delay,
           }}
           src={icon.src}
@@ -281,7 +273,7 @@ function FloatingIcons() {
         />
       ))}
     </div>
-  );
+  )
 }
 
 // Glowing separator component
@@ -292,34 +284,34 @@ function GlowingSeparator() {
       <div className={styles.separatorGlow2} />
       <div className={styles.separatorLine} />
     </div>
-  );
+  )
 }
 
 // Educational cards component
 function EducationalCards() {
   const cards = [
     {
-      src: "/images/card1.png",
-      alt: "Card 1",
+      src: '/images/card1.png',
+      alt: 'Card 1',
       width: 200,
       height: 200,
       className: styles.card1,
     },
     {
-      src: "/images/card2.png",
-      alt: "Card 2",
+      src: '/images/card2.png',
+      alt: 'Card 2',
       width: 170,
       height: 170,
       className: styles.card2,
     },
     {
-      src: "/images/card3.png",
-      alt: "Card 3",
+      src: '/images/card3.png',
+      alt: 'Card 3',
       width: 170,
       height: 170,
       className: styles.card3,
     },
-  ];
+  ]
 
   return (
     <div className={styles.cardsContainer}>
@@ -334,7 +326,7 @@ function EducationalCards() {
         />
       ))}
     </div>
-  );
+  )
 }
 
 // Bottom section component
@@ -345,7 +337,7 @@ function BottomSection() {
       <GlowingSeparator />
       <EducationalCards />
     </div>
-  );
+  )
 }
 
 /**
@@ -397,15 +389,11 @@ export default function ELearning({
             onSecondaryClick={onSecondaryClick}
           />
 
-          <UserTestimonials
-            rating={rating}
-            reviewCount={reviewCount}
-            userAvatars={userAvatars}
-          />
+          <UserTestimonials rating={rating} reviewCount={reviewCount} userAvatars={userAvatars} />
 
           <BottomSection />
         </div>
       </section>
     </>
-  );
+  )
 }

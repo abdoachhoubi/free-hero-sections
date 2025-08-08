@@ -1,4 +1,4 @@
-import { styles } from "../styles";
+import { styles } from '../styles'
 
 export function Background() {
   return (
@@ -6,5 +6,5 @@ export function Background() {
       <div className={styles.backgroundBlob1} />
       <div className={styles.backgroundBlob2} />
     </div>
-  );
+  )
 }

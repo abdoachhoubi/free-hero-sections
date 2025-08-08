@@ -1,4 +1,4 @@
-import { styles } from "../styles";
+import { styles } from '../styles'
 
 export const Background = () => (
   <div className={styles.backgroundContainer}>
@@ -6,4 +6,4 @@ export const Background = () => (
     <div className={styles.diagonalLine1} />
     <div className={styles.diagonalLine2} />
   </div>
-);
+)

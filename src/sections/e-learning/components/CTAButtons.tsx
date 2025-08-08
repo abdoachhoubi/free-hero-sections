@@ -1,12 +1,12 @@
-import { ArrowRightCircle } from "lucide-react";
-import { IBM_Plex_Mono } from "next/font/google";
-import { styles } from "../styles";
-import { CTAButtonsProps } from "../types";
+import { ArrowRightCircle } from 'lucide-react'
+import { IBM_Plex_Mono } from 'next/font/google'
+import { styles } from '../styles'
+import { CTAButtonsProps } from '../types'
 
 const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+})
 
 export function CTAButtons({
   primaryButtonText,
@@ -31,5 +31,5 @@ export function CTAButtons({
         {primaryButtonText}
       </button>
     </div>
-  );
+  )
 }

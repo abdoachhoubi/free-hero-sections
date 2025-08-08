@@ -1,11 +1,11 @@
-"use client";
+'use client'
 
-import { Background } from "./components/Background";
-import { BottomSection } from "./components/BottomSection";
-import { HeroContent } from "./components/HeroContent";
-import { UserTestimonials } from "./components/UserTestimonials";
-import { backgroundPattern, styles } from "./styles";
-import { ELearningProps } from "./types";
+import { Background } from './components/Background'
+import { BottomSection } from './components/BottomSection'
+import { HeroContent } from './components/HeroContent'
+import { UserTestimonials } from './components/UserTestimonials'
+import { backgroundPattern, styles } from './styles'
+import { ELearningProps } from './types'
 
 /**
  * ELearning - Clean educational platform hero section
@@ -56,15 +56,11 @@ export function ELearning({
             onSecondaryClick={onSecondaryClick}
           />
 
-          <UserTestimonials
-            rating={rating}
-            reviewCount={reviewCount}
-            userAvatars={userAvatars}
-          />
+          <UserTestimonials rating={rating} reviewCount={reviewCount} userAvatars={userAvatars} />
 
           <BottomSection />
         </div>
       </section>
     </>
-  );
+  )
 }

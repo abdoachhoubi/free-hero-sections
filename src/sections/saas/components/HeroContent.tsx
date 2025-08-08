@@ -1,11 +1,11 @@
-import { styles } from "../styles";
-import { MainContentProps } from "../types";
-import { AvailabilityBadge } from "./AvailabilityBadge";
-import { CTAButtons } from "./CTAButtons";
-import { Description } from "./Description";
-import { Headline } from "./Headline";
-import { TrustIndicators } from "./TrustIndicators";
-import { VisualElement } from "./VisualElement";
+import { styles } from '../styles'
+import { MainContentProps } from '../types'
+import { AvailabilityBadge } from './AvailabilityBadge'
+import { CTAButtons } from './CTAButtons'
+import { Description } from './Description'
+import { Headline } from './Headline'
+import { TrustIndicators } from './TrustIndicators'
+import { VisualElement } from './VisualElement'
 
 export const HeroContent = ({
   isAvailable,
@@ -19,10 +19,7 @@ export const HeroContent = ({
 }: MainContentProps) => (
   <div className={styles.mainContainer}>
     <div className={styles.contentContainer}>
-      <AvailabilityBadge
-        isAvailable={isAvailable}
-        availabilityText={availabilityText}
-      />
+      <AvailabilityBadge isAvailable={isAvailable} availabilityText={availabilityText} />
       <Headline headline={headline} />
       <Description description={description} />
       <CTAButtons
@@ -35,4 +32,4 @@ export const HeroContent = ({
     </div>
     <VisualElement />
   </div>
-);
+)

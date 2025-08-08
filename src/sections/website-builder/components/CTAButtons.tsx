@@ -1,6 +1,6 @@
-import { ArrowRight } from "lucide-react";
-import { styles } from "../styles";
-import type { ActionButtonsProps } from "../types";
+import { ArrowRight } from 'lucide-react'
+import { styles } from '../styles'
+import type { ActionButtonsProps } from '../types'
 
 export function CTAButtons({
   primaryText,
@@ -18,5 +18,5 @@ export function CTAButtons({
         {secondaryText}
       </button>
     </div>
-  );
+  )
 }

@@ -1,20 +1,20 @@
-import { styles } from "../styles";
-import type { WebsiteBuilderProps } from "../types";
-import { CTAButtons } from "./CTAButtons";
-import { NotificationBanner } from "./NotificationBanner";
-import { Statistics } from "./Statistics";
+import { styles } from '../styles'
+import type { WebsiteBuilderProps } from '../types'
+import { CTAButtons } from './CTAButtons'
+import { NotificationBanner } from './NotificationBanner'
+import { Statistics } from './Statistics'
 
 interface HeroContentProps {
-  notificationText: string;
-  notificationCta: string;
-  headline: string;
-  description: string;
-  primaryButtonText: string;
-  secondaryButtonText: string;
-  onPrimaryClick: () => void;
-  onSecondaryClick: () => void;
-  onNotificationClick: () => void;
-  stats: WebsiteBuilderProps["stats"];
+  notificationText: string
+  notificationCta: string
+  headline: string
+  description: string
+  primaryButtonText: string
+  secondaryButtonText: string
+  onPrimaryClick: () => void
+  onSecondaryClick: () => void
+  onNotificationClick: () => void
+  stats: WebsiteBuilderProps['stats']
 }
 
 export function HeroContent({
@@ -52,5 +52,5 @@ export function HeroContent({
         <Statistics stats={stats} />
       </header>
     </div>
-  );
+  )
 }

@@ -1,19 +1,15 @@
-import { Star } from "lucide-react";
-import { IBM_Plex_Mono } from "next/font/google";
-import Image from "next/image";
-import { styles } from "../styles";
-import { UserTestimonialsProps } from "../types";
+import { Star } from 'lucide-react'
+import { IBM_Plex_Mono } from 'next/font/google'
+import Image from 'next/image'
+import { styles } from '../styles'
+import { UserTestimonialsProps } from '../types'
 
 const ibmPlexMono = IBM_Plex_Mono({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-});
+  weight: ['100', '200', '300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+})
 
-export function UserTestimonials({
-  rating,
-  reviewCount,
-  userAvatars,
-}: UserTestimonialsProps) {
+export function UserTestimonials({ rating, reviewCount, userAvatars }: UserTestimonialsProps) {
   return (
     <div className={styles.testimonialsContainer}>
       <div className={styles.avatarContainer}>
@@ -40,5 +36,5 @@ export function UserTestimonials({
         </span>
       </div>
     </div>
-  );
+  )
 }

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { styles } from "../styles";
+import Image from 'next/image'
+import { styles } from '../styles'
 
 export function HeroImage() {
   return (
@@ -13,5 +13,5 @@ export function HeroImage() {
         priority
       />
     </figure>
-  );
+  )
 }
