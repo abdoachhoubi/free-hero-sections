@@ -42,7 +42,7 @@ Click the **GitHub** button on any card to jump directly to its source code.
 
 ## 📥 How to Use a Hero Section
 
-### **Option A — Copy from the Repo**
+### Copy from the Repo**
 
 1. Browse the folder for the hero you want:
 
@@ -52,38 +52,6 @@ Click the **GitHub** button on any card to jump directly to its source code.
 2. Copy the hero folder into your project.
 3. Update **import paths** and **assets** as needed.
 
----
-
-### **Option B — Import Directly in a Next.js App**
-
-Each hero exposes a **main component** with **typed props**.
-
-**Example (SaaS Hero)**
-`app/saas/page.tsx`:
-
-```tsx
-import Saas from '@/sections/saas'
-import { SAAS_DATA } from '@/data/hero-data'
-
-export default function Page() {
-  return (
-    <main>
-      <Saas
-        {...SAAS_DATA}
-        onPrimaryClick={() => {}}
-        onSecondaryClick={() => {}}
-      />
-    </main>
-  )
-}
-```
-
-**Other heroes follow the same pattern:**
-
-* `app/e-learning/page.tsx` → `ELearning` from `@/sections/e-learning`
-* `app/website-builder/page.tsx` → `WebsiteBuilder` from `@/sections/website-builder`
-
----
 
 ## 📂 Project Structure
 
