@@ -42,7 +42,7 @@ Click the **GitHub** button on any card to jump directly to its source code.
 
 ## 📥 How to Use a Hero Section
 
-### Copy from the Repo**
+### Copy from the Repo
 
 1. Browse the folder for the hero you want:
 
